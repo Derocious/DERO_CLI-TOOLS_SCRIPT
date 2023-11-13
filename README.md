@@ -19,14 +19,9 @@ Ensure to thank these fellas for making this possible.
  
 # HOW TO USE SCRIPT:
 
-1. Download the file called "linux-setup_v0.0.1.sh"
-2. Open a terminal inside of the same folder
-3. Run the command 'ls' to ensure you're in the right folder. It will display a list of all files inside of the same directory you're in.
-4. If you see the correct file move to the last step running the command 'bash linux-setup_v0.0.1.sh'
-5. Follow the directions that the script says to install the miner, create a script to run it, and run the miner.
+1. Inside of a linux terminal run this command: 'wget https://raw.githubusercontent.com/Derocious/DERO_CLI-TOOLS_SCRIPT/main/linux-setup_v0.0.1.sh && bash linux-setup_v0.0.1.sh'
 
-I will be working to simplify this right now. This will be 1 line of code very shortly.
+
 The next version will also have the ability to register a new wallet if you do not have one, but I am going to first get all the scripts out for each platform.
-
 If you have any errors or questions dm me on twitter @ burntboi or submit a pull request.
 
