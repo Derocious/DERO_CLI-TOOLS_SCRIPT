@@ -19,6 +19,6 @@ Ensure to thank these fellas for making this possible.
 
 # HOW TO USE:
 
-1.  For the linux edition you can simply run the following command to get started: 'wget https://github.com/derocious/DERO_CLI-TOOLS_SCRIPT/linux-setup_v0.0.1.sh && bash linux-setup_v0.0.1.sh'
+1.  For the linux edition you can simply run the following command to get started: 'wget https://github.com/Derocious/DERO_CLI-TOOLS_SCRIPT/blob/main/linux-setup_v0.0.1.sh && bash linux-setup_v0.0.1.sh'
 
 
