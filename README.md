@@ -2,7 +2,7 @@
 
 [CLICK HERE TO SCROLL TO USAGE INSTRUCTIONS](#usage)
 
-## This is a script, I've only situated the tools for easy access. All credit for the tools being used inside of this script goes to their respective creators! 
+## **This is a script, I've only situated the tools for easy access. All credit for the tools being used inside of this script goes to their respective creators!** 
 
 #### - So far this includes only HANSEN33 for the miner used & also his teammate MARCEL who helps with the pool they run. 
 The miner that's used is found here: [Hansen33's Miner](https://github.com/Hansen333/Hansen33-s-DERO-Miner)
