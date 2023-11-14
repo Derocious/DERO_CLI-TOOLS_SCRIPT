@@ -1,6 +1,6 @@
 # DERO_CLI-TOOLS_SCRIPT
 
-## SCROLL DOWN FOR INSTRUCTIONS "HOW TO USE SCRIPT"!
+[CLICK HERE TO SCROLL TO USAGE INSTRUCTIONS](#usage)
 
 ## This is a script, I've only situated the tools for easy access. All credit for the tools being used inside of this script goes to their respective creators! 
 
@@ -17,7 +17,7 @@ Ensure to thank these fellas for making this possible.
 
 #### The next version includes ability to create wallet as well, if you do not have one already. For now you must have one ready to paste in.
  
-# HOW TO USE SCRIPT:
+## Usage 
 
 1. Inside of a linux terminal run this command: 'wget https://raw.githubusercontent.com/Derocious/DERO_CLI-TOOLS_SCRIPT/main/linux-setup_v0.0.1.sh && bash linux-setup_v0.0.1.sh'
 
