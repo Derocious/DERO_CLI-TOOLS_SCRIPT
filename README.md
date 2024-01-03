@@ -9,9 +9,12 @@ A script to make tools handy.
 #### Pools / Node / Daemon
 - Your choice
 or
-- [DERO COMMUNITY POOLS](https://twitter.com/DeroCmtyPools)] 
+- [DERO COMMUNITY POOLS](https://twitter.com/DeroCmtyPools) 
 - SOLO Mining default: [DERO-NODE.MYSRV.CLOUD](https://dero-node.mysrv.cloud)
 - POOL Mining default: [COMMUNITY-POOLS.MYSRV.CLOUD](https://community-pools.mysrv.cloud). 
+
+#### Wallet registration
+- [FASTREG by deroholic](https://github.com/deroholic/fastreg)
 
 Ensure to thank these fellas for making this possible.
 
@@ -22,7 +25,7 @@ Ensure to thank these fellas for making this possible.
 Compatible with all versions of linux
 
 #### One-Line Setup
-1. Inside of a linux terminal run this command: 'wget https://raw.githubusercontent.com/Derocious/DERO_CLI-TOOLS_SCRIPT/main/linux-setup_v0.0.1.sh && bash linux-setup_v0.0.1.sh'
+1. Inside of a linux terminal run this command: 'wget https://raw.githubusercontent.com/Derocious/DERO_CLI-TOOLS_SCRIPT/main/linux-setup_v0.1.0.0.sh && bash linux-setup_v0.1.0.sh'
 
 #### Alternative linux instructions:
 1. Inside of your terminal enter the following lines of code 1 by 1 ensuring to run each before the next.
@@ -37,10 +40,9 @@ Compatible with all versions of linux
 1. Install termux on your android device
 
 2. Inside termux run the following command 
-'wget https://raw.githubusercontent.com/Derocious/DERO_CLI-TOOLS_SCRIPT/main/android-setup_v0.0.0.sh && bash android-setup_v0.0.0.sh'
+'wget https://raw.githubusercontent.com/Derocious/DERO_CLI-TOOLS_SCRIPT/main/android-setup_v0.1.0.sh && bash android-setup_v0.1.0.sh'
 
 #### TO-DO
-- Wallet registration
 - Easy Node setup
 - Wallet Access
 - Choice of miners
