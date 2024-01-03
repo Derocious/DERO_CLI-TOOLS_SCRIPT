@@ -53,12 +53,12 @@ ${CLEAR_COLOR}${RED}ALWAYS CONFIRM WHAT A SCRIPT DOES BEFORE RUNNING IT ON YOUR 
 # Function to log messages to both stdout and a log file
 log_message() {
   local MESSAGE=$1
-  printf "$MESSAGE"
+  local PLAIN_MESSAGE=$(echo -e "${MESSAGE}" | sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g")
+  printf "${MESSAGE}"
   echo " "
-  echo "$(date +'%Y-%m-%d %H:%M:%S'): ${MESSAGE}" >> "$LOG_FILE"
+  echo "$(date +'%Y-%m-%d %H:%M:%S'): ${PLAIN_MESSAGE}" >> "$LOG_FILE"
   echo " "
 }
-
 
 fastreg_new_address() {
   git clone ${FASTREG_REPO}
@@ -175,7 +175,7 @@ update_system() {
 # Function to install dependencies 
 install_dependencies() {
   log_message "${YELLOW}Installing dependencies.${CLEAR_COLOR}"
-  if $PACKAGE_MANAGER install git wget golang gcc -y; then
+  if $PACKAGE_MANAGER install git wget golang gcc jq -y; then
     log_message "${GREEN}Dependencies installed!${CLEAR_COLOR}"
   else 
     log_message "${RED}ERROR: Failed to install necessary packages.${CLEAR_COLOR}"
@@ -270,8 +270,8 @@ hansen33_miner() {
   log_message "${GREEN}Latest version found: $latest_version${CLEAR_COLOR}"
   download_url="https://github.com/Hansen333/Hansen33-s-DERO-Miner/releases/download/$latest_version/hansen33s-dero-miner-$OS_TYPE-$PLATFORM.tar.gz"
   log_message "${YELLOW}Downloading Hansen33 miner version $latest_version.${CLEAR_COLOR}"
-  wget "$download_url" || handle_error "Failed to download Hansen33 miner."
-  tar -xvf hansen33*.tar.gz || handle_error "Failed to extract Hansen33 miner."
+  wget "$download_url" || log_message "${RED}Failed to download Hansen33 miner.${CLEAR_COLOR}" && exit 1
+  tar -xvf hansen33*.tar.gz || log_message "${RED}Failed to extract Hansen33 miner.${CLEAR_COLOR}" && exit 1
   rm hansen33*.tar.gz
   chmod +x hansen33*
   echo " "
