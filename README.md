@@ -25,7 +25,7 @@ Ensure to thank these fellas for making this possible.
 Compatible with all versions of linux
 
 #### One-Line Setup
-1. Inside of a linux terminal run this command: 'wget https://raw.githubusercontent.com/Derocious/DERO_CLI-TOOLS_SCRIPT/main/linux-setup_v0.1.0.0.sh && bash linux-setup_v0.1.0.sh'
+1. Inside of a linux terminal run this command: 'wget https://raw.githubusercontent.com/Derocious/DERO_CLI-TOOLS_SCRIPT/main/linux-setup_v0.1.0.sh && bash linux-setup_v0.1.0.sh'
 
 #### Alternative linux instructions:
 1. Inside of your terminal enter the following lines of code 1 by 1 ensuring to run each before the next.
