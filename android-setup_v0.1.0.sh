@@ -56,9 +56,10 @@ HANSEN33S_MINER_REPO="https://github.com/Hansen333/Hansen33-s-DERO-Miner/"
 # Function to log messages to both stdout and a log file
 log_message() {
   local MESSAGE=$1
+  local PLAIN_MESSAGE=$(echo -e "${MESSAGE}" | sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g")
   printf "${MESSAGE}"
   echo " "
-  echo "$(date +'%Y-%m-%d %H:%M:%S'): ${MESSAGE}" >> "$LOG_FILE"
+  echo "$(date +'%Y-%m-%d %H:%M:%S'): ${PLAIN_MESSAGE}" >> "$LOG_FILE"
   echo " "
 }
 
@@ -163,7 +164,7 @@ update_system() {
 # Function to install dependencies 
 install_dependencies() {
   log_message "${YELLOW}Installing dependencies.${CLEAR_COLOR}"
-  if $PACKAGE_MANAGER install git wget golang -y; then
+  if $PACKAGE_MANAGER install git wget golang jq -y; then
     log_message "${GREEN}Dependencies installed!${CLEAR_COLOR}"
   else 
     log_message "${RED}ERROR: Failed to install necessary packages.${CLEAR_COLOR}"
