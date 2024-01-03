@@ -270,8 +270,8 @@ hansen33_miner() {
   log_message "${GREEN}Latest version found: $latest_version${CLEAR_COLOR}"
   download_url="https://github.com/Hansen333/Hansen33-s-DERO-Miner/releases/download/$latest_version/hansen33s-dero-miner-$OS_TYPE-$PLATFORM.tar.gz"
   log_message "${YELLOW}Downloading Hansen33 miner version $latest_version.${CLEAR_COLOR}"
-  wget "$download_url" || log_message "${RED}Failed to download Hansen33 miner.${CLEAR_COLOR}" && exit 1
-  tar -xvf hansen33*.tar.gz || log_message "${RED}Failed to extract Hansen33 miner.${CLEAR_COLOR}" && exit 1
+  wget "$download_url" || log_message "${RED}Failed to download Hansen33 miner.${CLEAR_COLOR}"
+  tar -xvf hansen33*.tar.gz || log_message "${RED}Failed to extract Hansen33 miner.${CLEAR_COLOR}"
   rm hansen33*.tar.gz
   chmod +x hansen33*
   echo " "
