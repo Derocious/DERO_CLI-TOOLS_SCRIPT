@@ -34,9 +34,9 @@ ${CLEAR_COLOR}${RED}ALWAYS CONFIRM WHAT A SCRIPT DOES BEFORE RUNNING IT ON YOUR 
 
 # Environment variables
 BASE_ADDRESS='mysrv.cloud'
-  NODE_ADDRESS='dero-node.'
-  POOL_ADDRESS='community-pools.'
-  POOL_PORT=10300
+NODE_ADDRESS='dero-node.'
+POOL_ADDRESS='community-pools.'
+POOL_PORT=10300
 SOLO_PORT=10100
 RPC_PORT=10102
 CUSTOM_PORT=0
@@ -44,7 +44,7 @@ PACKAGE_MANAGER="pkg"
 CPU_THREADS=$(nproc)
 LOG_FILE="script_status.log"
 OS_TYPE="linux"
-  DERO_ADDRESS=" "
+DERO_ADDRESS=" "
 
 # Repositories used in script
 FASTREG_REPO="https://github.com/Derocious/fastreg.git"
@@ -130,7 +130,7 @@ set_platform() {
   SYSTEM_ARCH=$(uname -m)
   if [[ $SYSTEM_ARCH == "x86_64" || $SYSTEM_ARCH == "aarch64" || $SYSTEM_ARCH == "amd64" ]]; then
       SYSTEM_ARCH="64"
-  elif [[ $SYSTEM_ARCH == "i686" || $SYSTEM_ARCH == "i386" ]]; then
+  elif [[ $SYSTEM_ARCH == "i686" || $SYSTEM_ARCH == "i386" || $SYSTEM_ARCH == "armv8l" ]]; then
       SYSTEM_ARCH="32"
   elif [[ $SYSTEM_ARCH == "armv7l" ]]; then
       SYSTEM_ARCH="7"
@@ -151,7 +151,7 @@ set_platform() {
 }
 
 update_system() {
-  log_message "${YELLOW}Updating system. Password required.${CLEAR_COLOR}"
+  log_message "${YELLOW}Updating system.${CLEAR_COLOR}"
   $PACKAGE_MANAGER update && $PACKAGE_MANAGER upgrade -y
   log_message "${GREEN}System update complete!${CLEAR_COLOR}"
 }
@@ -159,7 +159,7 @@ update_system() {
 # Function to install dependencies 
 install_dependencies() {
   log_message "${YELLOW}Installing dependencies.${CLEAR_COLOR}"
-  if $PACKAGE_MANAGER install git wget golang gcc -y; then
+  if $PACKAGE_MANAGER install git wget golang -y; then
     log_message "${GREEN}Dependencies installed!${CLEAR_COLOR}"
   else 
     log_message "${RED}ERROR: Failed to install necessary packages.${CLEAR_COLOR}"
@@ -252,8 +252,8 @@ hansen33_miner() {
   log_message "${GREEN}Latest version found: $latest_version${CLEAR_COLOR}"
   download_url="https://github.com/Hansen333/Hansen33-s-DERO-Miner/releases/download/$latest_version/hansen33s-dero-miner-$OS_TYPE-$PLATFORM.tar.gz"
   log_message "${YELLOW}Downloading Hansen33 miner version $latest_version.${CLEAR_COLOR}"
-  wget "$download_url" || handle_error "Failed to download Hansen33 miner."
-  tar -xvf hansen33*.tar.gz || handle_error "Failed to extract Hansen33 miner."
+  wget "$download_url" || log_message "${RED}ERROR: Failed to download Hansen33 miner.${CLEAR_COLOR}" && exit 1
+  tar -xvf hansen33*.tar.gz || log_message "${RED}ERROR: Failed to extract Hansen33 miner.${CLEAR_COLOR}" && exit 1
   rm hansen33*.tar.gz
   chmod +x hansen33*
   echo " "
@@ -291,7 +291,6 @@ print_header
 echo " "
 log_message "${GREEN}Initiating script.${CLEAR_COLOR}"
 
-set_package_manager
 update_system
 install_dependencies
 set_platform
