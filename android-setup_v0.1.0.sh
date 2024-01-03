@@ -132,8 +132,12 @@ set_platform() {
       SYSTEM_ARCH="64"
   elif [[ $SYSTEM_ARCH == "i686" || $SYSTEM_ARCH == "i386" || $SYSTEM_ARCH == "armv8l" ]]; then
       SYSTEM_ARCH="32"
+      log_message "${RED}ERROR: 32 bit processor not currently supported${CLEAR_COLOR}"
+      exit 1
   elif [[ $SYSTEM_ARCH == "armv7l" ]]; then
       SYSTEM_ARCH="7"
+      log_message "${RED}ERROR: 7 bit processor not currently supported${CLEAR_COLOR}"
+      exit 1
   else
       log_message "${RED}ERROR: Unsupported system architecture ($SYSTEM_ARCH)${CLEAR_COLOR}"
       exit 1
